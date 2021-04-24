@@ -43,7 +43,7 @@ export const getUserProfile = asyncHandler(async (req, res) => {
 });
 
 // @desc Auth user & get token
-// @route POST /api/users
+// @route POST /api/users/register
 // @access Public
 export const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
