@@ -10,14 +10,11 @@ import Loader from "../components/Loader";
 export default function LoginScreen({ history, location }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  console.log(location)
   const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin);
   const { loading, error, userInfo } = userLogin;
-
   const redirect = location.search ? location.search.split("=")[1] : "/";
-
-  console.log(redirect);
 
   useEffect(() => {
     if (userInfo) {
@@ -42,7 +39,10 @@ export default function LoginScreen({ history, location }) {
             type="email"
             placeholder="Enter email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              console.log(1111111111);
+            }}
           ></Form.Control>
         </Form.Group>
 
