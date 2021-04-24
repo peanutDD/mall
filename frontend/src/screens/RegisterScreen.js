@@ -20,8 +20,6 @@ export default function RegisterScreen({ history, location }) {
 
   const redirect = location.search ? location.search.split('=')[1] : '/'
 
-  console.log(redirect);
-
   useEffect(() => {
     if (userInfo) {
       history.push(redirect)
@@ -50,6 +48,7 @@ export default function RegisterScreen({ history, location }) {
             type="name"
             placeholder="Enter name"
             value={name}
+            required
             onChange={(e) => setName(e.target.value)}
           ></Form.Control>
         </Form.Group>
@@ -60,6 +59,7 @@ export default function RegisterScreen({ history, location }) {
             type="email"
             placeholder="Enter email"
             value={email}
+            required
             onChange={(e) => setEmail(e.target.value)}
           ></Form.Control>
         </Form.Group>
@@ -70,6 +70,7 @@ export default function RegisterScreen({ history, location }) {
             type="password"
             placeholder="Enter password"
             value={password}
+            required
             onChange={(e) => setPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
@@ -80,6 +81,7 @@ export default function RegisterScreen({ history, location }) {
             type="password"
             placeholder="Confirm password"
             value={confirmPassword}
+            required
             onChange={(e) => setConfirmPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>

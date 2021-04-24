@@ -41,7 +41,6 @@ export default function LoginScreen({ history, location }) {
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);
-              console.log(1111111111);
             }}
           ></Form.Control>
         </Form.Group>
